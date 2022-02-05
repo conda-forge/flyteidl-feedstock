@@ -25,6 +25,7 @@ requirements:
 test:
   imports:
     - flyteidl
+    - flyteidl.core.tasks_pb2
     - validate
   commands:
     - pip check
