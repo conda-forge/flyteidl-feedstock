@@ -1,5 +1,5 @@
 {% set name = "flyteidl" %}
-{% set version = "0.22.2" %}
+{% set version = "1.1.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/flyteidl-{{ version }}.tar.gz
-  sha256: 269b8148da0ac55df4ab442785ad75c73150a902e71c006e906ece9ea5bac6bd
+  sha256: d3643deeb523a5f7507faf51870f0973721ff101271b79d199a6b5a95c035bbd
 
 build:
   noarch: python
@@ -19,13 +19,24 @@ requirements:
     - pip
     - python >=3.6
   run:
-    - protobuf >=3.5.0,<4.0.0
     - python >=3.6
+    - googleapis-common-protos
+    - protobuf >=3.5.0,<4.0.0
+    - protoc-gen-swagger
 
 test:
   imports:
     - flyteidl
-    - flyteidl.core.tasks_pb2
+    - flyteidl.admin
+  commands:
+    - pip check
+  requires:
+    - pip
+    
+
+test:
+  imports:
+    - flyteidl
     - validate
   commands:
     - pip check
@@ -39,8 +50,24 @@ about:
   license_file:
     - LICENSE
     - NOTICE
+  description: |
+    This is one of the core repositories of Flyte. It contains the Specification 
+    of the Flyte Language using protobuf messages, the Backend API specification 
+    in gRPC, and Swagger REST. The repo contains the generated clients and protocol 
+    message structures in multiple languages. Along with the generated code, the 
+    repository also contains the Golang clients for Flyte's backend APIs (the 
+    services grouped under FlyteAdmin).
+
+    - Flyte HomePage: https://flyte.org
+    - Flyte Docs: http://docs.flyte.org/
+
+    PyPI: [https://pypi.org/project/flyteidl/](https://pypi.org/project/flyteidl/)
+
+  doc_url: https://docs.flyte.org/projects/flyteidl/en/stable/
+  dev_url: https://github.com/flyteorg/flyteidl
 
 extra:
   recipe-maintainers:
     - bmcconeghy
     - asford
+    - sugatoray
