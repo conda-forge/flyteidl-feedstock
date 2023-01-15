@@ -1,5 +1,5 @@
 {% set name = "flyteidl" %}
-{% set version = "1.2.8" %}
+{% set version = "1.2.5" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/flyteidl-{{ version }}.tar.gz
-  sha256: ca55c04321c544bb35f83a563d853d06fd0e43808936f897d7fff5e9e90c3f91
+  sha256: dcd8b1f2cea254fa6f2b352361e7c8442a927b73ad1f8d92bff81576fdfcf916
 
 build:
   noarch: python
@@ -21,7 +21,7 @@ requirements:
   run:
     - python >=3.6
     - googleapis-common-protos
-    - protobuf >=4.21.1,<5.0.0
+    - protobuf >=3.5.0,<4.0.0
     - protoc-gen-swagger
 
 test:
