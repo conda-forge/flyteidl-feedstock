@@ -1,11 +1,11 @@
-About flyteidl
-==============
+About flyteidl-feedstock
+========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/flyteidl-feedstock/blob/main/LICENSE.txt)
 
 Home: https://www.github.com/flyteorg/flyteidl
 
 Package license: Apache-2.0
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/flyteidl-feedstock/blob/main/LICENSE.txt)
 
 Summary: IDL for Flyte Platform
 
@@ -165,3 +165,4 @@ Feedstock Maintainers
 * [@cosmicBboy](https://github.com/cosmicBboy/)
 * [@eapolinario](https://github.com/eapolinario/)
 * [@sugatoray](https://github.com/sugatoray/)
+
