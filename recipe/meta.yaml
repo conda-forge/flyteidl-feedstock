@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/flyteidl-{{ version }}.tar.gz
-  sha256: 98c15dbc6e98d577bd2ac6f9196d5e00503efbd332167adeebbfce06027a2eda
+  sha256: 22b81cee904bd15e5f2898fd7600b2cedd8e08c1ca21954a6fb91b81e01f9ea9
 
 build:
   noarch: python
