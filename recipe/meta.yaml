@@ -32,16 +32,6 @@ test:
     - pip check
   requires:
     - pip
-    
-
-test:
-  imports:
-    - flyteidl
-    - validate
-  commands:
-    - pip check
-  requires:
-    - pip
 
 about:
   home: https://www.github.com/flyteorg/flyteidl
