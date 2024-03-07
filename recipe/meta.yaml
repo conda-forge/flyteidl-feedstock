@@ -12,12 +12,18 @@ source:
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
     - python >=3.8
+    # The dependencies below are required to make sure `setuptools_scm` is used to 
+    # dynamically infer the version. Without this, the `pip` version of the package
+    # would appear to be 0.0.0
+    - setuptools >=69
+    - setuptools_scm >=8
+    - toml
   run:
     - python >=3.8
     - googleapis-common-protos
