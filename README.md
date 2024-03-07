@@ -9,7 +9,7 @@ Package license: Apache-2.0
 
 Summary: IDL for Flyte Platform
 
-Development: https://github.com/flyteorg/flyte/tree/master/flyteidl
+Development: https://github.com/flyteorg/flyteidl
 
 Documentation: https://docs.flyte.org/projects/flyteidl/en/stable/
 
