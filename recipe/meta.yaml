@@ -6,18 +6,18 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/flyteidl-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/flyteidl-{{ version }}.tar.gz
   sha256: 26db75033f2a3c2de50cfca82bc61367154e0b28a3380bb9dc9d0851b1fb9313
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python {{ python_min }}
     # The dependencies below are required to make sure `setuptools_scm` is used to 
     # dynamically infer the version. Without this, the `pip` version of the package
     # would appear to be 0.0.0
@@ -25,7 +25,7 @@ requirements:
     - setuptools_scm >=8
     - toml
   run:
-    - python >=3.8
+    - python >={{ python_min }}
     - googleapis-common-protos
     - protoc-gen-openapiv2
     - protobuf >=4.21.1,<5.0.0
@@ -38,6 +38,7 @@ test:
     - pip check
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   home: https://www.github.com/flyteorg/flyteidl
