@@ -1,5 +1,5 @@
 {% set name = "flyteidl" %}
-{% set version = "1.16.5" %}
+{% set version = "1.16.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/flyteidl-{{ version }}.tar.gz
-  sha256: 6ec9cd324334c88f63b587dc99f992e8fe9adff3343c3076a3bdebbeb752b950
+  sha256: 87df59ef79d0332a61be77fb9fa613557afee40520176bc2f1a99d8153f03b29
 
 build:
   noarch: python
